@@ -1,0 +1,15 @@
+
+https://www.youtube.com/watch?v=vIKy3pDz3jM
+touch index.html
+vi index.html 
+docker cp index.html 7cc8141983de:/usr/share/nginx/html/
+docker commit 7cc8141983de cad/web:version-1
+docker tag cad/web:version-1 us.gcr.io/youtubetest-167505/cad-site-version-1
+# Push the image to the google container registry
+docker push us.gcr.io/youtubetest-167505/cad-site-version-1
+# https://console.cloud.google.com/artifacts?referrer=search&project=youtubetest-167505
+
+gcloud config  set compute/zone ap-southeast-1
+# Create a GKE cluster and deploy the application
+
+
